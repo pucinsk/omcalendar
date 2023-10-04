@@ -1,0 +1,13 @@
+<h3>Schedules</h3>
+<% if @schedules.blank? %>
+  <p>There are no active schedules</p>
+<% else %>
+  <ul>
+    <% @schedules.each do |schedule| %>
+      <li><%= link_to schedule.created_at.to_s, schedule %></li>
+    <% end %>
+  </ul>
+  <br/>
+  <div><%= paginate @schedules %><div>
+
+<% end %>
