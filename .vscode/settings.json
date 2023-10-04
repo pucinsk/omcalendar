@@ -1,3 +1,10 @@
 {
-    "ruby.specSaveFile": true
+    "ruby.specSaveFile": true,
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": null,
+    "ruby.lint": {
+        "rubocop": true
+    },
+    "ruby.format": "rubocop"
 }
