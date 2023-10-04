@@ -3,6 +3,9 @@ require:
   - rubocop-rspec
   - rubocop-performance
 
+AllCops:
+  NewCops: enable
+
 Style/StringLiterals:
   Enabled: true
   EnforcedStyle: double_quotes
