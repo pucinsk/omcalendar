@@ -1,10 +1,12 @@
 {
     "ruby.specSaveFile": true,
     "editor.tabSize": 2,
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "editor.defaultFormatter": null,
-    "ruby.lint": {
-        "rubocop": true
-    },
-    "ruby.format": "rubocop"
+    "ruby.format": "rubocop",
+    "ruby.rubocop.configFilePath": "/Users/pucinsk/p/omcalendar/.rubocop.yml",
+    "ruby.rubocop.executePath": "/Users/pucinsk/.asdf/shims/",
+    "ruby.rubocop.useBundler": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true
 }
