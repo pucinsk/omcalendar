@@ -1,16 +1,17 @@
 <h3>Schedule <%= @schedule.id %></h3>
 
-<%= Date::DAYS_INTO_WEEK.transform_keys { _1.slice(0, 2) }.keys.join(" ") %>
-
-<% Date.current.all_month.to_a.in_groups_of(7) do |week_days| %>
-<% end %>
-
-<% Date.current.all_month.to_a.in_groups_of(7) do |week_days| %>
-  <% week_days.compact.map do |date| %>
-    <%= date.day.to_s.rjust(2, "0")  %>
+<% current_month_calendar = Calendars::Month.new(Date.current) %>
+<table>
+  <% current_month_calendar.weeks.each do |week| %>
+    <tr>
+      <td><%= week.cweek %></td>
+      <td>|</td>
+      <% week.days.each do |day| %>
+        <td><%= day.to_s(:calendar_day)%></td>
+      <% end %>
+    </tr>
   <% end %>
-  <br />
-<% end %>
+</table>
 
 <%= link_to "Create a new task", new_schedule_task_path(@schedule), method: :post %>
 <% if @schedule.tasks.blank? %>

@@ -26,7 +26,7 @@ module Calendars
 
       (0...7)
         .map { first_week_day + _1.day }
-        .map { _1.month == date.month ? _1 : nil }
+        .map { _1.month == date.month ? Calendars::Day.new(date: _1) : Calendars::Day::NilDay.new }
     end
   end
 end
