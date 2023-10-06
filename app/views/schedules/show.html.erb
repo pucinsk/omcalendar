@@ -1,4 +1,17 @@
-<p>Schedule <%= @schedule.id %></p>
+<h3>Schedule <%= @schedule.id %></h3>
+
+<%= Date::DAYS_INTO_WEEK.transform_keys { _1.slice(0, 2) }.keys.join(" ") %>
+
+<% Date.current.all_month.to_a.in_groups_of(7) do |week_days| %>
+<% end %>
+
+<% Date.current.all_month.to_a.in_groups_of(7) do |week_days| %>
+  <% week_days.compact.map do |date| %>
+    <%= date.day.to_s.rjust(2, "0")  %>
+  <% end %>
+  <br />
+<% end %>
+
 <%= link_to "Create a new task", new_schedule_task_path(@schedule), method: :post %>
 <% if @schedule.tasks.blank? %>
   <p>There are no tasks present</p>
