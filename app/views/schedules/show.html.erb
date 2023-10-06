@@ -1,0 +1,11 @@
+<p>Schedule <%= @schedule.id %></p>
+<%= link_to "Create a new task", new_schedule_task_path(@schedule), method: :post %>
+<% if @schedule.tasks.blank? %>
+  <p>There are no tasks present</p>
+<% else %>
+  <ul>
+    <% @schedule.tasks.each do |task| %>
+      <li><%= task.title %></li>
+    <% end %>
+  </ul>
+<% end %>

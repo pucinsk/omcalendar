@@ -5,5 +5,7 @@ class SchedulesController < ApplicationController
     @schedules = Schedule.order(created_at: :desc).page(page).per(per_page)
   end
 
-  def show; end
+  def show
+    @schedule = Schedule.find(params[:id])
+  end
 end
