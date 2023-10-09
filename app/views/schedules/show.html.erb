@@ -1,25 +1,32 @@
-<h3>Schedule <%= @schedule.id %></h3>
-
 <% current_month_calendar = Calendars::Month.new(Date.current) %>
-<table>
-  <% current_month_calendar.weeks.each do |week| %>
-    <tr>
-      <td><%= week.cweek %></td>
-      <td>|</td>
-      <% week.days.each do |day| %>
-        <td><%= day.to_s(:calendar_day)%></td>
-      <% end %>
-    </tr>
-  <% end %>
-</table>
 
+<h3>Schedule <%= @schedule.id %></h3>
 <%= link_to "Create a new task", new_schedule_task_path(@schedule), method: :post %>
-<% if @schedule.tasks.blank? %>
-  <p>There are no tasks present</p>
-<% else %>
-  <ul>
-    <% @schedule.tasks.each do |task| %>
-      <li><%= task.title %></li>
+
+<div class="row">
+  <div class="col-md-3">
+    <table>
+      <% current_month_calendar.weeks.each do |week| %>
+        <tr>
+          <td><%= week.cweek %></td>
+          <td>|</td>
+          <% week.days.each do |day| %>
+            <td><%= day.to_s(:calendar_day)%></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+
+  <div class="col-md">
+    <% if @schedule.tasks.blank? %>
+      <p>There are no tasks present</p>
+    <% else %>
+      <ul>
+        <% @schedule.tasks.each do |task| %>
+          <li><%= task.title %></li>
+        <% end %>
+      </ul>
     <% end %>
-  </ul>
-<% end %>
+  </div>
+</div>
