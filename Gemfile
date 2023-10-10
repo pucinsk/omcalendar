@@ -53,6 +53,7 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+gem "aasm"
 gem "kaminari"
 
 group :development, :test do
@@ -60,6 +61,7 @@ group :development, :test do
   gem "debug", platforms: %i[mri mingw x64_mingw]
   gem "factory_bot_rails", "~> 6.2"
   gem "faker"
+  gem "pry-rails"
   gem "rails-controller-testing"
   gem "rspec-rails", "~> 6.0", ">= 6.0.3"
   gem "rubocop", "~> 1.56", ">= 1.56.4"

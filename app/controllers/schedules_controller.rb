@@ -2,7 +2,7 @@
 
 class SchedulesController < ApplicationController
   def index
-    @schedules = Schedule.order(created_at: :desc).page(page).per(per_page)
+    @schedules = Schedule.all
   end
 
   def show

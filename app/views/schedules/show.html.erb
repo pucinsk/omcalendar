@@ -4,21 +4,7 @@
 <%= link_to "Create a new task", new_schedule_task_path(@schedule), method: :post %>
 
 <div class="row">
-  <div class="col-md-3">
-    <table>
-      <% current_month_calendar.weeks.each do |week| %>
-        <tr>
-          <td><%= week.cweek %></td>
-          <td>|</td>
-          <% week.days.each do |day| %>
-            <td><%= day.to_s(:calendar_day)%></td>
-          <% end %>
-        </tr>
-      <% end %>
-    </table>
-  </div>
-
-  <div class="col-md">
+  <div class="col-md-9">
     <% if @schedule.tasks.blank? %>
       <p>There are no tasks present</p>
     <% else %>
@@ -28,5 +14,20 @@
         <% end %>
       </ul>
     <% end %>
+  </div>
+
+  <div class="col-md">
+    <div><b>Calendar</b></div>
+    <table>
+      <% current_month_calendar.weeks.each do |week| %>
+        <tr>
+          <td><%= week.cweek %></td>
+          <td>|</td>
+          <% week.days.each do |day| %>
+            <td data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tooltip on top"><%= day.to_s(:calendar_day)%></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </table>
   </div>
 </div>
