@@ -4,6 +4,7 @@ class Task < ApplicationRecord
   include AASM
 
   belongs_to :schedule
+  has_many :items, dependent: :destroy
 
   aasm column: "status" do
     state :draft, initial: true
