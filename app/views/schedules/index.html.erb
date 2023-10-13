@@ -1,5 +1,6 @@
 <div>
   <h3>Schedules</h3>
+  <%= link_to "Add schedule", new_schedule_path %>
   <% if @schedules.blank? %>
     <p>There are no active schedules</p>
   <% else %>

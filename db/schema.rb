@@ -26,19 +26,37 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_10_074207) do
   end
 
   create_table "schedules", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "task_templates", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "name"
+    t.string "type"
+    t.jsonb "config"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "tasks", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "title"
+    t.datetime "starts_at"
+    t.integer "duration"
+    t.uuid "task_template_id", null: false
+    t.uuid "parent_id", null: false
     t.uuid "schedule_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "status"
+    t.index ["parent_id"], name: "index_tasks_on_parent_id"
     t.index ["schedule_id"], name: "index_tasks_on_schedule_id"
+    t.index ["task_template_id"], name: "index_tasks_on_task_template_id"
   end
 
   add_foreign_key "items", "tasks"
   add_foreign_key "tasks", "schedules"
+  add_foreign_key "tasks", "task_templates"
+  add_foreign_key "tasks", "tasks", column: "parent_id"
 end

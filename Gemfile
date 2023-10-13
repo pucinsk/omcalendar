@@ -54,9 +54,11 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 gem "aasm"
+gem "activeinteractor", require: "active_interactor"
 gem "kaminari"
 
 group :development, :test do
+  gem "annotate"
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri mingw x64_mingw]
   gem "factory_bot_rails", "~> 6.2"

@@ -4,9 +4,11 @@
     "editor.formatOnSave": false,
     "editor.defaultFormatter": null,
     "ruby.format": "rubocop",
-    "ruby.rubocop.configFilePath": "/Users/pucinsk/p/omcalendar/.rubocop.yml",
-    "ruby.rubocop.executePath": "/Users/pucinsk/.asdf/shims/",
+    "ruby.rubocop.configFilePath": "",
+    "ruby.rubocop.executePath": "",
     "ruby.rubocop.useBundler": true,
     "files.insertFinalNewline": true,
-    "files.trimFinalNewlines": true
+    "files.trimFinalNewlines": true,
+    "rubyLsp.formatter": "rubocop",
+    "ruby.rubocop.suppressRubocopWarnings": false
 }
