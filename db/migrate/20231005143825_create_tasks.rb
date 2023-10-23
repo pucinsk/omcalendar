@@ -6,8 +6,6 @@ class CreateTasks < ActiveRecord::Migration[7.0]
       t.string :title
       t.datetime :starts_at
       t.integer :duration
-      t.references :task_template, null: false, foreign_key: true, type: :uuid
-      t.references :parent, null: false, foreign_key: { to_table: :tasks }, type: :uuid
       t.references :schedule, null: false, foreign_key: true, type: :uuid
 
       t.timestamps

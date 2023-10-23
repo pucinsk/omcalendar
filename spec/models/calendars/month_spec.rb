@@ -19,11 +19,11 @@ RSpec.describe Calendars::Month do
 
   # rubocop:disable Style/WordArray
 
-  describe "#days_by_week" do
-    subject(:days_by_week) { month.days_by_week }
+  describe "#weeks" do
+    subject(:weeks) { month.weeks }
 
     it do
-      expect(days_by_week).to match_array(
+      expect(weeks).to match_array(
         [
           ["2023-10-01"],
           ["2023-10-02", "2023-10-03", "2023-10-04", "2023-10-05", "2023-10-06", "2023-10-07", "2023-10-08"],
@@ -36,10 +36,4 @@ RSpec.describe Calendars::Month do
     end
   end
   # rubocop:enable Style/WordArray
-
-  describe "#weeks_count" do
-    subject(:weeks_count) { month.weeks_count }
-
-    it { is_expected.to eq(6) }
-  end
 end

@@ -18,11 +18,9 @@ end
 #
 # Table name: tasks
 #
-#  duration         :integer
-#  starts_at        :datetime
-#  status           :string
-#  title            :string
-#  parent_id        :uuid             not null
-#  schedule_id      :uuid             not null
-#  task_template_id :uuid             not null
+#  duration    :integer
+#  starts_at   :datetime
+#  status      :string
+#  title       :string
+#  schedule_id :uuid             not null
 #

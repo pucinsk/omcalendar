@@ -1,4 +1,11 @@
-<%= form_for @task, url: schedule_tasks_path(@schedule) do |f| %>
-  <%= f.text_field :title %>
+<%= form_with model: @task, url: schedule_tasks_path(@schedule), class: "col col-md-4 mx-auto" do |f| %>
+  <div class="form-floating mb-3">
+    <%= f.text_field :title, class: "form-control", placeholder: "My new epic task" %>
+    <%= f.label :title %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :start_at %> </br>
+    <%= f.datetime_select :start_at, class: "form-control", placeholder: "2023-10-10 15:10", start_year: Date.current.year %>
+  </div>
   <%= submit_tag "Save" %>
 <% end %>
