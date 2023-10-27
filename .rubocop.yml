@@ -15,6 +15,9 @@ Layout/MultilineMethodCallIndentation:
   Enabled: true
   EnforcedStyle: indented
 
+Rails/I18nLocaleTexts:
+  Enabled: false
+
 RSpec/ExampleLength:
   Enabled: false
 

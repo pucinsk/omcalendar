@@ -3,3 +3,5 @@
 // ./bin/rails generate stimulus controllerName
 
 import { application } from "./application"
+import TodosTasksController from "./todos/tasks_controller"
+application.register("todos--tasks", TodosTasksController)

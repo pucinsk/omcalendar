@@ -1,14 +1,13 @@
-<ul>
-  <% @tasks.each do |task| %>
-    <li></li>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-      <%= form_for model: :task do |f| %>
-
-      <% end %>
-      <label class="form-check-label" for="flexCheckDefault">
+<%= notice %>
+<% @tasks.each do |task| %>
+  <div class="form-check">
+    <%= form_with model: task do |f| %>
+      <%= f.check_box :state, { class: "form-check-input", data: { controller: "todos--tasks", "todos--tasks-target" => "state", action: "input->todos--tasks#updateState"} }, "completed", "started" %>
+      <%= f.label :title, class: "form-check-label" do %>
         <%= task.title %>
-      </label>
-    </div>
-  <% end %>
-</ul>
+      <% end %>
+
+      <%= submit_tag %>
+    <% end %>
+  </div>
+<% end %>
