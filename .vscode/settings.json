@@ -1,7 +1,7 @@
 {
     "ruby.specSaveFile": true,
     "editor.tabSize": 2,
-    "editor.formatOnSave": false,
+    "editor.formatOnSave": true,
     "editor.defaultFormatter": null,
     "ruby.format": "rubocop",
     "ruby.rubocop.configFilePath": "",
@@ -9,6 +9,11 @@
     "ruby.rubocop.useBundler": true,
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
-    "rubyLsp.formatter": "rubocop",
-    "ruby.rubocop.suppressRubocopWarnings": false
+    "rubyLsp.formatter": "auto",
+    "ruby.rubocop.suppressRubocopWarnings": false,
+    "files.trimTrailingWhitespace": true,
+    "editor.autoIndent": "advanced",
+    "[ruby]": {
+        "editor.defaultFormatter": "Shopify.ruby-lsp"
+    }
 }

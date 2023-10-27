@@ -79,6 +79,9 @@ GEM
       minitest (>= 5.1)
       mutex_m
       tzinfo (~> 2.0)
+    after_commit_everywhere (1.3.1)
+      activerecord (>= 4.2)
+      activesupport
     annotate (3.2.0)
       activerecord (>= 3.2, < 8.0)
       rake (>= 10.4, < 14.0)
@@ -175,7 +178,7 @@ GEM
       pry (>= 0.10.4)
     psych (5.1.1.1)
       stringio
-    puma (5.6.7)
+    puma (6.4.0)
       nio4r (~> 2.0)
     racc (1.7.1)
     rack (3.0.8)
@@ -311,6 +314,7 @@ PLATFORMS
 DEPENDENCIES
   aasm
   activeinteractor
+  after_commit_everywhere (~> 1)
   annotate
   bootsnap
   cssbundling-rails
@@ -322,7 +326,7 @@ DEPENDENCIES
   kaminari
   pg (~> 1.1)
   pry-rails
-  puma (~> 5.0)
+  puma (~> 6.4)
   rails (~> 7.1)
   rails-controller-testing
   rspec-rails (~> 6.0, >= 6.0.3)

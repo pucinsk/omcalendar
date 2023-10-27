@@ -15,7 +15,7 @@ gem "sprockets-rails"
 gem "pg", "~> 1.1"
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem "puma", "~> 5.0"
+gem "puma", "~> 6.4"
 
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
 gem "jsbundling-rails"
@@ -55,6 +55,7 @@ gem "bootsnap", require: false
 
 gem "aasm"
 gem "activeinteractor", require: "active_interactor"
+gem "after_commit_everywhere", "~> 1"
 gem "kaminari"
 
 group :development, :test do
