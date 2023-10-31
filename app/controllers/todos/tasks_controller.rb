@@ -4,14 +4,16 @@ module Todos
   class TasksController < ApplicationController
     def index
       @tasks = Task.all
+      @new_task = Task.new
     end
 
     def create
-      task = Task.new(task_params)
+      @new_task = Task.new(task_params)
 
-      if task.save
+      if @new_task.save
         redirect_to root_path, notice: "It worked"
       else
+        @tasks = Task.all
         render :index, notice: ":("
       end
     end

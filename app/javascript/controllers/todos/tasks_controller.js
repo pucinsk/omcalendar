@@ -4,6 +4,6 @@ export default class extends Controller {
   static targets = ["state"]
 
   updateState() {
-    console.log(this.stateTarget.value)
+    this.stateTarget.closest("form").sumit()
   }
 }
