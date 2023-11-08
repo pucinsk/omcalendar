@@ -48,4 +48,10 @@ RSpec.describe Todos::Task do
       end
     end
   end
+
+  describe "#liquid_content" do
+    subject(:liquid_content) { task.liquid_content }
+
+    it { is_expected.to eq("") }
+  end
 end

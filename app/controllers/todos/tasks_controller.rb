@@ -7,6 +7,10 @@ module Todos
       @new_task = Task.new
     end
 
+    def show
+      @task = Task.find(params[:id])
+    end
+
     def create
       @new_task = Task.new(task_params)
 

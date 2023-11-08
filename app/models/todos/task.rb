@@ -21,6 +21,10 @@ module Todos
         transitions from: :started, to: :completed
       end
     end
+
+    def liquid_content
+      ""
+    end
   end
 end
 
