@@ -1,9 +1,12 @@
-<p>started</p>
-<%= render partial: "todos/tasks/components/list", locals: { tasks: @tasks.started } %>
-<hr />
-<p>completed</p>
-<%= render partial: "todos/tasks/components/list", locals: { tasks: @tasks.completed } %>
+<div class="row">
+  <div class="col-md-2 offset-md-5">
+    <p>started</p>
+    <%= render partial: "todos/tasks/components/list", locals: { tasks: @tasks.started } %>
+    <hr />
+    <p>completed</p>
+    <%= render partial: "todos/tasks/components/list", locals: { tasks: @tasks.completed } %>
 
-<%= form_with model: @new_task do |f| %>
-  <%= f.text_field :title %>
-<% end %>
+    <%= link_to "New task", new_todos_task_path, data: { controller: "turbo" } %>
+  </div>
+</div>
+<%= turbo_frame_tag "remote_modal" %>

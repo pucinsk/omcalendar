@@ -3,5 +3,12 @@
 // ./bin/rails generate stimulus controllerName
 
 import { application } from "./application"
-import TodosTasksController from "./todos/tasks_controller"
-application.register("todos--tasks", TodosTasksController)
+
+import ModalController from "./modal_controller"
+application.register("modal", ModalController)
+
+import Todos__TasksController from "./todos/tasks_controller"
+application.register("todos--tasks", Todos__TasksController)
+
+import TurboController from "./turbo_controller"
+application.register("turbo", TurboController)

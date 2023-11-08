@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   root to: "todos/tasks#index"
 
   namespace :todos do
-    resources :tasks, only: %i[index create update show]
+    resources :tasks, only: %i[index create update show edit new]
   end
 end

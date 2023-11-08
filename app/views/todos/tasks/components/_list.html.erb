@@ -1,10 +1,19 @@
+<table>
+  <% tasks.each do |task| %>
+    <tr>
+      <td><%= task.title %></td>
+      <td><%= link_to "Edit", edit_todos_task_path(task), data: { controller: "turbo" } %>
+    </tr>
+  <% end %>
+</table>
+
 <% tasks.each do |task| %>
-  <%= form_with model: task do |f| %>
+  <% form_with model: task do |f| %>
     <div class="form-check">
       <%= f.check_box :state, { class: "form-check-input", data: { controller: "todos--tasks", "todos--tasks-target" => "state", action: "input->todos--tasks#updateState"} }, "completed", "started" %>
-      <%= f.label :state, class: "form-check-label" do %>
+      <%= f.label :state, class: "form-check-label d-flex justify-content-between" do %>
         <%= "#{task.title} - #{task.state}" %>
-        <%= link_to "✉️", todos_task_path(task) %>
+        <%= link_to "✉️", todos_task_path(task), class: "" %>
       <% end %>
     </div>
   <% end %>

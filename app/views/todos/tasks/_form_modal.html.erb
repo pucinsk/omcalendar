@@ -1,0 +1,19 @@
+<%= turbo_frame_tag "remote_modal", target: "_top" do %>
+  <div class="modal fade" data-controller="modal">
+    <div class="modal-dialog">
+      <%= form_with model: @task, class: "modal-content" do |f| %>
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <%= f.text_field :title %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <%= f.submit "Save", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
