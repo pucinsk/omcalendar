@@ -56,8 +56,13 @@ gem "image_processing", "~> 1.2"
 gem "aasm"
 gem "activeinteractor", require: "active_interactor"
 gem "after_commit_everywhere", "~> 1"
+
 gem "kaminari"
 gem "liquid", github: "shopify/liquid"
+
+gem "devise", "~> 4.9", ">= 4.9.3"
+gem "omniauth-google-oauth2", "~> 1.1", ">= 1.1.1"
+gem "omniauth-rails_csrf_protection"
 
 group :development, :test do
   gem "annotate"
