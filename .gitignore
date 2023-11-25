@@ -38,4 +38,4 @@
 /config/database.yml
 /config/credentials/development.key
 
-/tokens.yml
+/tokens.yaml

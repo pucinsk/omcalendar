@@ -29,7 +29,7 @@ class GoogleServicesAccessController < ApplicationController
   end
 
   def oauth2callback
-    Array(params[:scope]).first.split(" ").grep(%r{googleapis.com/auth}).each do |scope|
+    Array(params[:scope]).first.split.grep(%r{googleapis.com/auth}).each do |scope|
       current_account.update(
         google_services: current_account.google_services.merge(scope => params[:code]),
       )

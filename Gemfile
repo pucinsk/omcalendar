@@ -76,10 +76,10 @@ group :development, :test do
   gem "pry-rails"
   gem "rails-controller-testing"
   gem "rspec-rails", "~> 6.0", ">= 6.0.3"
-  gem "rubocop", "~> 1.56", ">= 1.56.4"
-  gem "rubocop-performance", "~> 1.19", ">= 1.19.1"
-  gem "rubocop-rails", "~> 2.21", ">= 2.21.2"
-  gem "rubocop-rspec", "~> 2.24", ">= 2.24.1"
+  gem "rubocop"
+  gem "rubocop-performance"
+  gem "rubocop-rails"
+  gem "rubocop-rspec"
 end
 
 group :development do
