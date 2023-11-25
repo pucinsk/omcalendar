@@ -56,9 +56,11 @@ gem "image_processing", "~> 1.2"
 gem "aasm"
 gem "activeinteractor", require: "active_interactor"
 gem "after_commit_everywhere", "~> 1"
-
+gem "google-api-ruby-client", "~> 9001.0"
+gem "google-apis-gmail_v1"
 gem "kaminari"
 gem "liquid", github: "shopify/liquid"
+gem "signet"
 
 gem "devise", "~> 4.9", ">= 4.9.3"
 gem "omniauth-google-oauth2", "~> 1.1", ">= 1.1.1"
@@ -66,6 +68,7 @@ gem "omniauth-rails_csrf_protection"
 
 group :development, :test do
   gem "annotate"
+  gem "dotenv-rails"
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri mingw x64_mingw]
   gem "factory_bot_rails", "~> 6.2"

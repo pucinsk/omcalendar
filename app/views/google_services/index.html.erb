@@ -1,0 +1,11 @@
+Google Services
+
+<ul>
+  <% @services.each do |service| %>
+  <li>
+    <%= service.scope %>
+    <%= service.enabled_for_account?(current_account) ? "Enabled" : "Disabled" %>
+    <%= link_to "Flip", flip_path(scope: service.scope, enable: !service.enabled_for_account?(current_account)) %>
+  </li>
+  <% end %>
+</ul>

@@ -9,11 +9,12 @@
     "ruby.rubocop.useBundler": true,
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
-    "rubyLsp.formatter": "auto",
+    "rubyLsp.formatter": "rubocop",
     "ruby.rubocop.suppressRubocopWarnings": false,
     "files.trimTrailingWhitespace": true,
     "editor.autoIndent": "advanced",
     "[ruby]": {
         "editor.defaultFormatter": "Shopify.ruby-lsp"
-    }
+    },
+    "rubyLsp.rubyVersionManager": "auto"
 }

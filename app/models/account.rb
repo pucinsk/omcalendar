@@ -30,6 +30,7 @@ end
 #
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
+#  google_services        :jsonb            not null
 #  provider               :string
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
