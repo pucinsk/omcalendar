@@ -5,6 +5,7 @@ require "googleauth/stores/file_token_store"
 class GoogleServicesController < ApplicationController
   def index
     @services = GoogleService.all
+    @messages = Gapps::Gmail::Messages::List.perform(email: current_account.email).messages
   end
 
   def flip

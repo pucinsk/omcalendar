@@ -9,3 +9,17 @@ Google Services
   </li>
   <% end %>
 </ul>
+
+<div>Your GMail account email is <%= current_account.email %></div>
+<div>Your GMail account has these labels: <%= ['Demo', 'Important' ].join(", ") %></div>
+<div>You GMail accout has <%= 0 %></div>
+<div>
+  <p>Your 10 recent emails:</p>
+  <ul>
+    <% @messages.each do |message| %>
+      <li>
+        <%= message.subject %>
+      </li>
+    <% end %>
+  </ul>
+</div>

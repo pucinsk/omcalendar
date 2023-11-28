@@ -4,6 +4,7 @@ module Gapps
   module Gmail
     module Messages
       class ListContext < ApplicationContext
+        attributes :email
       end
     end
   end

@@ -35,7 +35,7 @@ module Gapps
         end
 
         def secrets
-          Secrets::Google::WebClient.new
+          @secrets ||= Secrets::Google::WebClient.new
         end
 
         def token_store
